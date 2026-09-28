@@ -23,15 +23,47 @@ def save_results(results: list[dict], path: str) -> None:
     with open(path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 
+def dashboard(results: list[dict]):
+    valid = [r["analysis"] for r in results if "category" in r["analysis"]]
+
+    # un nombre de tickets par catégorie
+    counts = {}
+    for a in valid:
+        cat = a["category"]
+        counts[cat] = counts.get(cat, 0) + 1
+
+    # Une urgence moyenne
+    if valid:
+        avg_severity = sum(a["severity"] for a in valid) / len(valid)
+    else:
+        avg_severity = 0
+
+    top3 = sorted(valid, key=lambda x: x["severity"], reverse=True)[:3]
+
+    print("\n=== Dashboard ===")
+    print("Tickets par catégorie :", counts)
+    print("Urgence moyenne :", round(avg_severity, 2))
+    print("Top 3 des tickets les plus urgents :")
+    for t in top3:
+        print(f"- {t['category']} (urgence {t['severity']}) : {t['summary']}")
+
 
 async def process_tickets():
     tickets = load_tickets("tickets.json")
+    seen = set()
     results = []
 
     for ticket in tickets:
         message = ticket.get("message", "").strip()
+        player = ticket.get("player", "").strip()
 
-        if not message:
+        key = (player, message) # Détection des doublons
+        if key in seen:
+            results.append({**ticket, "analysis": {"status": "duplicate"}})
+            continue
+        seen.add(key)
+
+        if len(message) < 3:  # ici gestion d'un message trop court pour être analysé
             results.append({**ticket, "analysis": {"status": "to_check"}})
             continue
 
@@ -45,7 +77,7 @@ async def process_tickets():
 
     save_results(results, "results.json")
     print("Analyse terminée. Résultats dans results.json.")
-
+    dashboard(results)
 
 def main():
     asyncio.run(process_tickets())

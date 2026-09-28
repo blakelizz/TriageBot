@@ -31,7 +31,7 @@ Définitions :
 Si le message est vide ou incompréhensible :
 Réponds avec :
 {
-  "category": "other",
+  "category": "autre",
   "severity": 1,
   "sentiment": "neutral",
   "summary": "Message vide ou non analysable."

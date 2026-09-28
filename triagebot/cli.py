@@ -37,7 +37,8 @@ async def process_tickets():
 
         try:
             analysis = await analyze_ticket(message)
-        except Exception:
+        except Exception as e:
+            print(f"Erreur LLM pour le ticket {ticket.get('id')} : {e}")
             analysis = {"status": "to_check"}
 
         results.append({**ticket, "analysis": analysis})

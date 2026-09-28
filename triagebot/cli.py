@@ -1,6 +1,10 @@
 import json
 import asyncio
-from pathlib import Path
+
+from draft import generate_draft
+from escalation_rules import escalation_rule
+from report import generate_report
+
 
 from llm_client import analyze_ticket
 
@@ -54,17 +58,23 @@ async def process_tickets():
     results = []
 
     for ticket in tickets:
-        message = ticket.get("message", "").strip()
+        message = (ticket.get("message") or "").strip()
         player = ticket.get("player", "").strip()
 
         key = (player, message) # Détection des doublons
         if key in seen:
-            results.append({**ticket, "analysis": {"status": "duplicate"}})
+            analysis = {"status": "duplicate"}
+            draft = generate_draft(ticket, analysis)
+            decision = escalation_rule(analysis)
+            results.append({**ticket, "analysis": analysis, "draft": draft, "escalation": decision})
             continue
         seen.add(key)
 
         if len(message) < 3:  # ici gestion d'un message trop court pour être analysé
-            results.append({**ticket, "analysis": {"status": "to_check"}})
+            analysis = {"status": "to_check"}
+            draft = generate_draft(ticket, analysis)
+            decision = escalation_rule(analysis)
+            results.append({**ticket, "analysis": analysis, "draft": draft, "escalation": decision})
             continue
 
         try:
@@ -72,12 +82,22 @@ async def process_tickets():
         except Exception as e:
             print(f"Erreur LLM pour le ticket {ticket.get('id')} : {e}")
             analysis = {"status": "to_check"}
+        
+        draft = generate_draft(ticket, analysis)
+        decision = escalation_rule(analysis)
 
-        results.append({**ticket, "analysis": analysis})
+        results.append({
+            **ticket,
+            "analysis": analysis,
+            "draft": draft,
+            "escalation": decision,
+        })
 
     save_results(results, "results.json")
     print("Analyse terminée. Résultats dans results.json.")
     dashboard(results)
+    generate_report(results)
+    print("Rapport généré : report.md")
 
 def main():
     asyncio.run(process_tickets())
@@ -85,6 +105,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
 

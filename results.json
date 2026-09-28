@@ -5,10 +5,12 @@
     "message": "Le jeu crash à chaque fois que j'ouvre l'inventaire au niveau 3. J'ai perdu 2h de progression !!!",
     "analysis": {
       "category": "bug",
-      "severity": 4,
+      "severity": 5,
       "sentiment": "negative",
-      "summary": "Le jeu crash lors de l'ouverture de l'inventaire au niveau 3, entraînant la perte de progression."
-    }
+      "summary": "Le jeu plante lors de l'ouverture de l'inventaire au niveau 3, entraînant une perte de progression significative."
+    },
+    "draft": "Merci pour votre message ! Nous avons bien noté le problème et allons le corriger.",
+    "escalation": "standard"
   },
   {
     "id": 2,
@@ -18,8 +20,10 @@
       "category": "suggestion",
       "severity": 1,
       "sentiment": "positive",
-      "summary": "Suggestion d'ajouter des options de pizzas végétariennes."
-    }
+      "summary": "L'utilisateur suggère des pizzas végétariennes pour les elfes."
+    },
+    "draft": "Merci pour votre message ! Nous allons analyser votre demande.",
+    "escalation": "standard"
   },
   {
     "id": 3,
@@ -29,8 +33,10 @@
       "category": "payment",
       "severity": 4,
       "sentiment": "negative",
-      "summary": "L'utilisateur a été débité plusieurs fois pour un abonnement premium et demande un remboursement immédiat."
-    }
+      "summary": "L'utilisateur a été débité trois fois pour un pack premium et exige un remboursement immédiat."
+    },
+    "draft": "Merci pour votre retour. Nous allons vérifier votre paiement rapidement.",
+    "escalation": "support_manager"
   },
   {
     "id": 4,
@@ -38,7 +44,9 @@
     "message": "",
     "analysis": {
       "status": "to_check"
-    }
+    },
+    "draft": "Thank you for your message! We will look into your request.",
+    "escalation": "human_review"
   },
   {
     "id": 5,
@@ -48,8 +56,10 @@
       "category": "account",
       "severity": 3,
       "sentiment": "negative",
-      "summary": "L'utilisateur ne peut pas s'authentifier avec son ancien mot de passe."
-    }
+      "summary": "L'utilisateur ne peut pas se connecter et son mot de passe ne fonctionne plus."
+    },
+    "draft": "Vielen Dank für Ihre Nachricht! Wir werden Ihre Anfrage prüfen.",
+    "escalation": "standard"
   },
   {
     "id": 6,
@@ -59,8 +69,10 @@
       "category": "autre",
       "severity": 5,
       "sentiment": "negative",
-      "summary": "Demande de remboursement urgente."
-    }
+      "summary": "Demande de remboursement urgente avec une valeur de 1000€."
+    },
+    "draft": "Merci pour votre message ! Nous allons analyser votre demande.",
+    "escalation": "standard"
   },
   {
     "id": 7,
@@ -70,8 +82,10 @@
       "category": "autre",
       "severity": 1,
       "sentiment": "neutral",
-      "summary": "L'utilisateur a besoin d'aide pour comprendre comment installer un jeu."
-    }
+      "summary": "L'utilisateur a besoin d'aide pour installer un jeu et est confus quant à un aspect inconnu."
+    },
+    "draft": "Merci pour votre message ! Nous allons analyser votre demande.",
+    "escalation": "standard"
   },
   {
     "id": 8,
@@ -79,7 +93,9 @@
     "message": "Le jeu crash à chaque fois que j'ouvre l'inventaire au niveau 3. J'ai perdu 2h de progression !!!",
     "analysis": {
       "status": "duplicate"
-    }
+    },
+    "draft": "Merci pour votre message ! Nous allons analyser votre demande.",
+    "escalation": "standard"
   },
   {
     "id": 9,
@@ -89,8 +105,10 @@
       "category": "autre",
       "severity": 4,
       "sentiment": "negative",
-      "summary": "Utilisateur exprime sa frustration et son mécontentement face au jeu."
-    }
+      "summary": "L'utilisateur exprime sa frustration et son mécontentement suite à une mauvaise expérience avec le jeu et utilise un langage offensant."
+    },
+    "draft": "Merci pour votre message ! Nous allons analyser votre demande.",
+    "escalation": "standard"
   },
   {
     "id": 10,
@@ -101,6 +119,8 @@
       "severity": 2,
       "sentiment": "negative",
       "summary": "Un bug permet de contourner le boss final en sautant."
-    }
+    },
+    "draft": "Merci pour votre message ! Nous avons bien noté le problème et allons le corriger.",
+    "escalation": "standard"
   }
 ]

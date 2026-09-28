@@ -1,0 +1,14 @@
+dnspython==2.7.0
+linkify-it-py==2.2.0
+markdown-it-py==4.2.0
+mdit-py-plugins==0.6.1
+mdurl==0.1.2
+platformdirs==4.12.1
+pygame==2.6.1
+Pygments==2.21.0
+pymongo==4.11
+PyOpenGL==3.1.9
+PyOpenGL-accelerate==3.1.9
+rich==15.0.0
+textual==8.2.8
+typing_extensions==4.16.0

@@ -5,9 +5,9 @@
     "message": "Le jeu crash à chaque fois que j'ouvre l'inventaire au niveau 3. J'ai perdu 2h de progression !!!",
     "analysis": {
       "category": "bug",
-      "severity": 5,
+      "severity": 4,
       "sentiment": "negative",
-      "summary": "Le jeu crash lors de l'ouverture de l'inventaire au niveau 3, entraînant une perte de progression."
+      "summary": "Le jeu plante lors de l'ouverture de l'inventaire au niveau 3, entraînant une perte de progression."
     }
   },
   {
@@ -18,7 +18,7 @@
       "category": "suggestion",
       "severity": 1,
       "sentiment": "positive",
-      "summary": "L'utilisateur suggère d'ajouter des pizzas végétariennes au jeu."
+      "summary": "L'utilisateur suggère l'ajout de pizzas végétariennes pour les elfes."
     }
   },
   {
@@ -48,7 +48,7 @@
       "category": "account",
       "severity": 3,
       "sentiment": "negative",
-      "summary": "L'utilisateur ne peut pas se connecter en raison d'un problème de mot de passe."
+      "summary": "L'utilisateur ne peut pas se connecter en raison d'un problème avec son mot de passe."
     }
   },
   {
@@ -67,10 +67,10 @@
     "player": "GrandmaGamer",
     "message": "Bonjour, mon petit-fils m'a installé le jeu mais je ne trouve pas comment livrer la pizza. Merci d'avance, bonne journée.",
     "analysis": {
-      "category": "other",
+      "category": "autre",
       "severity": 1,
       "sentiment": "neutral",
-      "summary": "L'utilisateur a besoin d'aide pour installer le jeu et ne comprend pas l'utilité de la mention de la pizza."
+      "summary": "L'utilisateur demande de l'aide pour livrer une pizza après avoir installé un jeu."
     }
   },
   {
@@ -79,9 +79,9 @@
     "message": "Le jeu crash à chaque fois que j'ouvre l'inventaire au niveau 3. J'ai perdu 2h de progression !!!",
     "analysis": {
       "category": "bug",
-      "severity": 5,
+      "severity": 4,
       "sentiment": "negative",
-      "summary": "Le jeu plante lors de l'ouverture de l'inventaire au niveau 3, entraînant une perte de progression significative."
+      "summary": "Le jeu plante lors de l'ouverture de l'inventaire au niveau 3, entraînant une perte de progression."
     }
   },
   {
@@ -89,10 +89,10 @@
     "player": "RageQuitter",
     "message": "Jeu nul, devs incompétents, vous êtes des [insulte]. Désinstallé.",
     "analysis": {
-      "category": "other",
+      "category": "bug",
       "severity": 4,
       "sentiment": "negative",
-      "summary": "L'utilisateur exprime sa frustration et son mécontentement suite à un problème dans le jeu."
+      "summary": "L'utilisateur exprime sa frustration et son mécontentement à l'égard du jeu et des développeurs."
     }
   },
   {
@@ -102,8 +102,8 @@
     "analysis": {
       "category": "bug",
       "severity": 2,
-      "sentiment": "negative",
-      "summary": "Un bug permet de contourner le boss final en sautant dans un coin."
+      "sentiment": "neutral",
+      "summary": "Il est possible de contourner le boss final en sautant contre un mur."
     }
   }
 ]

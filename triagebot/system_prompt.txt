@@ -23,7 +23,7 @@ Structure JSON attendue :
 }
 
 Définitions :
-- category : type de problème (ex: "bug", "payment", "account", "suggestion", "toxicity", "other").
+- category : type de problème (ex: "bug", "payment", "account", "suggestion", "toxicity", "autre").
 - severity : niveau d'urgence (1 = faible, 5 = critique).
 - sentiment : ton du message (positive, neutral, negative).
 - summary : résumé clair du problème en une phrase.

@@ -1,4 +1,11 @@
-def escalation_rule(analysis: dict) -> str:
+from security import is_prompt_injection
+
+def escalation_rule(analysis: dict, message: str = "") -> str:
+
+    if is_prompt_injection(message):
+        return "human_review"
+
+    
     category = analysis.get("category")
     severity = analysis.get("severity")
     status = analysis.get("status")

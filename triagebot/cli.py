@@ -65,7 +65,7 @@ async def process_tickets():
         if key in seen:
             analysis = {"status": "duplicate"}
             draft = generate_draft(ticket, analysis)
-            decision = escalation_rule(analysis)
+            decision = escalation_rule(analysis, message)
             results.append({**ticket, "analysis": analysis, "draft": draft, "escalation": decision})
             continue
         seen.add(key)
@@ -73,7 +73,7 @@ async def process_tickets():
         if len(message) < 3:  # ici gestion d'un message trop court pour être analysé
             analysis = {"status": "to_check"}
             draft = generate_draft(ticket, analysis)
-            decision = escalation_rule(analysis)
+            decision = escalation_rule(analysis, message)
             results.append({**ticket, "analysis": analysis, "draft": draft, "escalation": decision})
             continue
 
